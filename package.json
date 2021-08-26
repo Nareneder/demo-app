@@ -1,0 +1,45 @@
+{
+  "name": "auto-update-app",
+  "version": "1.0.0",
+  "description": "Narender",
+  "main": "src/core/main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "postinstall": "electron-builder install-app-deps",
+    "release": "build",
+    "build-release": "node_modules/.bin/build --win -p always",
+    "deploy": "electron-builder build --win --publish always"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Nareneder/demo-app"
+  },
+  "author": "Narender Sharma",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^13.2.2",
+    "electron-builder": "^22.11.7"
+  },
+  "build": {
+    "appId": "com.updater.app",
+    "productName": "demo-app",
+    "asar": true,
+    "mac": {
+      "category": "public.app-category.developer-tools",
+      "type": "distribution"
+    },
+    "publish": {
+      "provider": "github",
+      "token": "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"
+    }
+  },
+  "dependencies": {
+    "electron-updater": "^4.0.4"
+  },
+  "bugs": {
+    "url": "https://github.com/Nareneder/demo-app/issues"
+  },
+  "keywords": []
+}
